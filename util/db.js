@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb'
-const url =
-  'mongodb+srv://admin2:a44304413@Cluster0.2ducjsh.mongodb.net/?retryWrites=true&w=majority'
+require("dotenv").config();
+const url = process.env.mongodb
 const options = { useNewUrlParser: true }
 let connectDB
 
