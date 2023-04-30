@@ -7,7 +7,8 @@ export default async function Home() {
   console.log(result);
   return (
     <div>
-     안녕
+      <div>응아니얔ㅋ</div>
+      안녕
     </div>
   );
 }
