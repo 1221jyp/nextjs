@@ -10,9 +10,10 @@ export default async function Detail(props) {
 
   return (
     <div>
-      <h4>상세페이지임</h4>
+      <h1>컴퓨터공학</h1>
       <h4>{result.title}</h4>
       <p>{result.content}</p>
+      <P>흠 그 <b class="term">정도</b>인가ㅊㅌㅍㅌㅊㅍ?</P>
     </div>
   );
 }
