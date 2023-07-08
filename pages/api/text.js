@@ -4,6 +4,6 @@ export default async function handler(request, response) {
   console.log("hi");
   console.log(request.body);
   const db = (await connectDB).db("forum");
-  let result = await db.collection("post").insertOne(request.body);
+  await db.collection("post").insertOne(request.body);
   return response.status(200).json("처리완료");
 }

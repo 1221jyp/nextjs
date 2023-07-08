@@ -7,10 +7,12 @@ export default async function List() {
   return (
     <div>
       <div className="navbar">
-        <Link href="/" className="logo">
-          Appleforum
+        <Link href="/knowledgeai" className="logo" prefetch={false}>
+          지식 AI IN
         </Link>
-        <Link href="/knowledgeai">List</Link>
+        <Link href="/write" prefetch={false}>
+          글작성
+        </Link>
       </div>
       <div className="list-bg">
         {result.map((a, i) => {
