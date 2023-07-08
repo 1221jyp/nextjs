@@ -1,15 +1,15 @@
-import { MongoClient } from 'mongodb'
+import { MongoClient } from "mongodb";
 require("dotenv").config();
-const url = process.env.mongodb
-const options = { useNewUrlParser: true }
-let connectDB
+const url = process.env.mongodb;
+const options = { useNewUrlParser: true };
+let connectDB;
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === "development") {
   if (!global._mongo) {
-    global._mongo = new MongoClient(url, options).connect()
+    global._mongo = new MongoClient(url, options).connect();
   }
-  connectDB = global._mongo
+  connectDB = global._mongo;
 } else {
-  connectDB = new MongoClient(url, options).connect()
+  connectDB = new MongoClient(url, options).connect();
 }
-export { connectDB }
+export { connectDB };

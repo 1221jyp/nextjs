@@ -1,8 +1,32 @@
 body {
   background: white;
+  margin: 0;
 }
 a {
   text-decoration: none;
+}
+.navbar {
+  background: white;
+  padding: 20px;
+}
+.navbar a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: black;
+}
+.logo {
+  font-weight: bold;
+}
+.title {
+  font-size: 20px;
+  color: black;
+}
+.title:hover {
+  color: blueviolet;
+  transition: 0.3s;
+}
+.title:visited {
+  color: blueviolet;
 }
 .list-bg {
   background: rgb(249, 250, 255);
