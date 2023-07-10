@@ -1,4 +1,5 @@
 import { MongoClient } from "mongodb";
+
 require("dotenv").config();
 const url = process.env.mongodb;
 const options = { useNewUrlParser: true };

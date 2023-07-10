@@ -1,5 +1,6 @@
 import { connectDB } from "@/util/db";
 import Link from "next/link";
+import ListItem from "./listitem";
 
 export default async function List() {
   const db = (await connectDB).db("forum");
@@ -14,24 +15,7 @@ export default async function List() {
           글작성
         </Link>
       </div>
-      <div className="list-bg">
-        {result.map((a, i) => {
-          return (
-            <div>
-              <div className="list-item" key={i}>
-                <Link
-                  prefetch={false}
-                  className="title"
-                  href={"/detail/" + result[i]._id}
-                >
-                  {result[i].title}
-                </Link>
-                <p>{result[i].content}</p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+      <ListItem result={result}></ListItem>
     </div>
   );
 }
