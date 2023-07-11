@@ -17,7 +17,9 @@ export default function ListItem(props) {
                   >
                     {props.result[i].title}
                   </Link>
+                  <br></br>
                   <Link href={"/edit/" + props.result[i]._id}>수정</Link>
+                  <br></br>
                   <button
                     onClick={(e) => {
                       fetch("/api/delete", {
@@ -33,7 +35,6 @@ export default function ListItem(props) {
                   >
                     삭제
                   </button>
-                  <p>{props.result[i].content}</p>
                 </div>
               </div>
             );

@@ -12,7 +12,7 @@ export default async function Detail(props) {
     <div>
       <h1>안녕하세요</h1>
       <h4>{result.title}</h4>
-      <p>{result.content}</p>
+      <h4>{result.content }</h4>
     </div>
   );
 }
