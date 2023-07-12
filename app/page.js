@@ -1,14 +1,4 @@
-import { connectDB } from "@/util/db";
-
 export default async function Home() {
-  // const client = await connectDB;
-  // const db = client.db("forum");
-  // let result = await db.collection("post").find().toArray();
-
-  return (
-    <div>
-      <div>안녕</div>
-      안녕
-    </div>
-  );
+  //해당 웹페이지의 메인페이지, 나중에 새로운 작품 추가예정
+  return <div>미구현</div>;
 }

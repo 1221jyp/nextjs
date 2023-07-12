@@ -1,3 +1,4 @@
+//database에 입출력을 하기 위한 라이브러리 (본인작성 코드 아님)
 import { MongoClient } from "mongodb";
 
 require("dotenv").config();

@@ -1,12 +1,15 @@
 "use client";
 
+//질문 입력 상세페이지
+
+//질문 내용이 비어있는지 아닌지 검사하는 함수
 export default function Write() {
   const handleSubmit = (event) => {
     event.preventDefault(); // 기본 제출 동작 방지
 
     const titleInput = event.target.elements.title;
 
-    if (!titleInput.value ) {
+    if (!titleInput.value) {
       // 제목 또는 내용이 비어있는 경우
       alert("내용을 입력해주세요!");
     } else {
