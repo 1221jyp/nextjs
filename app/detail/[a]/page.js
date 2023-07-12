@@ -13,6 +13,8 @@ export default async function Detail(props) {
   return (
     <div>
       <h4>질문 : {result.title}</h4>
+      <p>작성자 : {result.author}</p>
+
       <h4>AI 답변 : {result.content}</h4>
     </div>
   );

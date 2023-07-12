@@ -1,9 +1,15 @@
 //필요 모듈 불러오기
 import { connectDB } from "@/util/db";
+import { getServerSession } from "next-auth";
+import { authOptions } from "./auth/[...nextauth]";
 require("dotenv").config();
 
 // write page에서 POST 요청을 받았을때 실행되는 함수
 export default async function handler(request, response) {
+  let session = await getServerSession(request, response, authOptions);
+  if (session) {
+    request.body.author = session.user.email;
+  }
   if (request.method == "POST") {
     if (request.body.title == "") {
       response.status(500).json("질문을 입력하세요.");
@@ -27,14 +33,10 @@ export default async function handler(request, response) {
         .then((res) => res.json())
         .then(async function ChatGpt(data) {
           try {
+            request.body.content = data.choices[0].message.content;
             //입력한 제목과 OPENAI의 답변을 database에 저장 요청
-            let result = Object.assign(
-              {},
-              request.body,
-              data.choices[0].message
-            );
             const db = (await connectDB).db("forum");
-            db.collection("post").insertOne(result);
+            db.collection("post").insertOne(request.body);
             //작업이 끝나면 메인 페이지로 이동
             response.redirect(302, "/knowledgeai");
             //오류발생시 실행될 함수
